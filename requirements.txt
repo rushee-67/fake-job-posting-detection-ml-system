@@ -1,0 +1,15 @@
+pandas
+numpy
+scikit-learn
+xgboost
+nltk
+mlflow
+streamlit
+matplotlib
+seaborn
+pyyaml
+joblib
+
+# Development
+pytest
+black

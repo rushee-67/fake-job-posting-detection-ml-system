@@ -1,0 +1,32 @@
+# Virtual Environment
+myenv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Logs
+logs/
+*.log
+
+# Artifacts
+artifacts/
+mlruns/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Environment variables
+.env
+
+# Model files
+*.pkl
+*.joblib
+
+# OS
+.DS_Store
