@@ -30,3 +30,5 @@ mlruns/
 
 # OS
 .DS_Store
+
+notebooks/fake_job_classifier.ipynb
