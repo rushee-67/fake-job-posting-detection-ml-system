@@ -1,0 +1,18 @@
+tfidf:
+
+  max_features: 15000
+
+  ngram_range: [1, 2]
+
+  min_df: 2
+
+  max_df: 0.95
+
+
+linear_svm:
+
+  C: 1
+
+  class_weight: balanced
+
+  random_state: 42

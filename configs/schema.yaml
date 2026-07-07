@@ -1,0 +1,10 @@
+TARGET_COLUMN:
+  fraudulent
+
+TEXT_COLUMNS:
+
+  - title
+  - company_profile
+  - description
+  - requirements
+  - benefits
