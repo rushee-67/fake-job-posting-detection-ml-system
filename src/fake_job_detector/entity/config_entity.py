@@ -24,3 +24,35 @@ class DataValidationConfig:
     data_file_path: Path
 
     all_schema: dict
+
+@dataclass(frozen=True)
+class DataTransformationConfig:
+
+    root_dir: Path
+
+    data_file_path: Path
+
+    preprocessor_path: Path
+
+    train_data_path: Path
+
+    test_data_path: Path
+
+    text_columns: list
+
+    target_column: str
+
+    tfidf_params: dict
+
+@dataclass(frozen=True)
+class DataTransformationArtifact:
+
+    train_data_path: Path
+
+    test_data_path: Path
+
+    preprocessor_path: Path
+
+    y_train: pd.Series
+
+    y_test: pd.Series

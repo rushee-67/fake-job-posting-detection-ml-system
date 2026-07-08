@@ -6,7 +6,7 @@ from fake_job_detector.constants import (
 
 from pathlib import Path
 from fake_job_detector.utils.common import read_yaml, create_directories
-from fake_job_detector.entity.config_entity import DataIngestionConfig, DataValidationConfig
+from fake_job_detector.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig
 
 
 class ConfigurationManager:
@@ -60,3 +60,30 @@ class ConfigurationManager:
         )
 
         return data_validation_config
+    
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+
+        config = self.config.data_transformation
+
+        create_directories([Path(config.root_dir)])
+
+        data_transformation_config = DataTransformationConfig(
+
+            root_dir=Path(config.root_dir),
+
+            data_file_path=Path(config.data_file_path),
+
+            preprocessor_path=Path(config.preprocessor_path),
+
+            train_data_path=Path(config.train_data_path),
+
+            test_data_path=Path(config.test_data_path),
+
+            text_columns=self.schema.TEXT_COLUMNS,
+
+            target_column=self.schema.TARGET_COLUMN,
+
+            tfidf_params=self.params.tfidf
+        )
+
+        return data_transformation_config
