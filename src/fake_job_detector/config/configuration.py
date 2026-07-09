@@ -6,7 +6,7 @@ from fake_job_detector.constants import (
 
 from pathlib import Path
 from fake_job_detector.utils.common import read_yaml, create_directories
-from fake_job_detector.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig
+from fake_job_detector.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig, PredictionPipelineConfig
 
 
 class ConfigurationManager:
@@ -105,3 +105,18 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+    
+    def get_prediction_pipeline_config(self):
+
+        config = self.config
+
+        return PredictionPipelineConfig(
+
+            preprocessor_path=Path(
+                config.data_transformation.preprocessor_path
+            ),
+
+            model_path=Path(
+                config.model_trainer.trained_model_path
+            )
+        )

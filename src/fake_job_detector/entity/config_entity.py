@@ -52,3 +52,10 @@ class ModelTrainerConfig:
     trained_model_path: Path
 
     svm_params: dict
+
+@dataclass(frozen=True)
+class PredictionPipelineConfig:
+
+    preprocessor_path: Path
+
+    model_path: Path
