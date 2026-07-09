@@ -19,6 +19,8 @@ from sklearn.model_selection import train_test_split
 from fake_job_detector.logger import logger
 from fake_job_detector.exception import CustomException
 from fake_job_detector.entity.config_entity import DataTransformationConfig
+from fake_job_detector.entity.artifact_entity import DataTransformationArtifact
+from fake_job_detector.utils.common import save_object
 
 
 class DataTransformation:
@@ -157,9 +159,9 @@ class DataTransformation:
 
         try:
 
-            joblib.dump(
-                vectorizer,
-                self.config.preprocessor_path
+            save_object(
+                self.config.preprocessor_path,
+                vectorizer
             )
 
             logger.info(
@@ -227,11 +229,21 @@ class DataTransformation:
 
             logger.info("Data transformation completed successfully.")
 
-            return (
-                X_train_tfidf,
-                X_test_tfidf,
-                y_train,
-                y_test
+            return DataTransformationArtifact(
+
+                train_data_path=self.config.train_data_path,
+
+                test_data_path=self.config.test_data_path,
+
+                preprocessor_path=self.config.preprocessor_path,
+
+                X_train=X_train_tfidf,
+
+                X_test=X_test_tfidf,
+
+                y_train=y_train,
+
+                y_test=y_test
             )
 
         except Exception as e:

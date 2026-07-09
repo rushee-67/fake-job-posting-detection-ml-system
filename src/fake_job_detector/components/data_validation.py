@@ -44,7 +44,7 @@ class DataValidation:
                 logger.error("Duplicate column names found.")
 
             # Write validation status
-            with open(self.config.STATUS_FILE, "w") as f:
+            with open(self.config.status_file, "w") as f:
                 if validation_status:
                     f.write("Validation Status: True\n")
                 else:

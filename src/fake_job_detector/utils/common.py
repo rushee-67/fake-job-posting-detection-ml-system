@@ -4,6 +4,7 @@ import os
 import yaml
 from box import ConfigBox
 import sys
+import joblib
 
 from fake_job_detector.exception import CustomException
 from fake_job_detector.logger import logger
@@ -37,6 +38,36 @@ def create_directories(
 
             if verbose:
                 logger.info(f"Created directory at: {path}")
+
+    except Exception as e:
+        raise CustomException(e, sys)
+
+def save_object(file_path: Path, obj):
+
+    """
+    Saves a Python object using joblib.
+    """
+
+    try:
+
+        os.makedirs(file_path.parent, exist_ok=True)
+
+        joblib.dump(obj, file_path)
+
+        logger.info(f"Object saved at: {file_path}")
+
+    except Exception as e:
+        raise CustomException(e, sys)
+    
+def load_object(file_path: Path):
+
+    """
+    Loads a Python object using joblib.
+    """
+
+    try:
+
+        return joblib.load(file_path)
 
     except Exception as e:
         raise CustomException(e, sys)

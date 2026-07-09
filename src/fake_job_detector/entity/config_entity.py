@@ -19,7 +19,7 @@ class DataValidationConfig:
 
     root_dir: Path
 
-    STATUS_FILE: Path
+    status_file: Path
 
     data_file_path: Path
 
@@ -43,16 +43,12 @@ class DataTransformationConfig:
     target_column: str
 
     tfidf_params: dict
-
+    
 @dataclass(frozen=True)
-class DataTransformationArtifact:
+class ModelTrainerConfig:
 
-    train_data_path: Path
+    root_dir: Path
 
-    test_data_path: Path
+    trained_model_path: Path
 
-    preprocessor_path: Path
-
-    y_train: pd.Series
-
-    y_test: pd.Series
+    svm_params: dict

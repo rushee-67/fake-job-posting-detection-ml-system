@@ -6,7 +6,7 @@ from fake_job_detector.constants import (
 
 from pathlib import Path
 from fake_job_detector.utils.common import read_yaml, create_directories
-from fake_job_detector.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig
+from fake_job_detector.entity.config_entity import DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig
 
 
 class ConfigurationManager:
@@ -52,7 +52,7 @@ class ConfigurationManager:
 
             root_dir=Path(config.root_dir),
 
-            STATUS_FILE=Path(config.STATUS_FILE),
+            status_file=Path(config.status_file),
 
             data_file_path=Path(config.data_file_path),
 
@@ -87,3 +87,21 @@ class ConfigurationManager:
         )
 
         return data_transformation_config
+    
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+
+        config = self.config.model_trainer
+
+        create_directories([Path(config.root_dir)])
+
+        model_trainer_config = ModelTrainerConfig(
+
+            root_dir=Path(config.root_dir),
+
+            trained_model_path=Path(config.trained_model_path),
+
+            svm_params=self.params.linear_svm
+
+        )
+
+        return model_trainer_config
