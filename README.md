@@ -287,6 +287,12 @@ The application is deployed on **Render** and can be accessed here:
 
 **🔗 https://fake-job-posting-detection-ml-system.onrender.com**
 
+## 📸 Application Preview
+
+### Home Page
+
+![Home Page](images/home_page.png)
+
 ## 🚀 Future Improvements
 
 - Replace TF-IDF with contextual text embeddings (e.g., Sentence Transformers) to improve semantic understanding.
