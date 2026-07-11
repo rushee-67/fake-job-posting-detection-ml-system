@@ -13,20 +13,18 @@ def home():
     prediction = None
     confidence = None
     if request.method == "POST":
-
-        prediction = pipeline.predict(
-
-            request.form["title"],
-
-            request.form["company_profile"],
-
-            request.form["description"],
-
-            request.form["requirements"],
-
-            request.form["benefits"]
-
-        )
+        try:
+            prediction = pipeline.predict(
+                request.form["title"],
+                request.form["company_profile"],
+                request.form["description"],
+                request.form["requirements"],
+                request.form["benefits"]
+            )
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            return f"<pre>{traceback.format_exc()}</pre>", 500
 
     return render_template(
         "index.html",
@@ -36,5 +34,8 @@ def home():
 
 
 if __name__ == "__main__":
-
-    app.run(debug=True)
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        debug=True
+    )

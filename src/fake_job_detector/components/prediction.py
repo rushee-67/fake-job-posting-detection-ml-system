@@ -32,16 +32,18 @@ class Prediction:
         return vectorizer, model
     
     def predict(
-    self,
-    title,
-    company_profile,
-    description,
-    requirements,
-    benefits
+        self,
+        title,
+        company_profile,
+        description,
+        requirements,
+        benefits
     ):
 
+        print("1. Loading artifacts...")
         vectorizer, model = self.load_artifacts()
 
+        print("2. Creating text...")
         text = self.preprocessor.create_text(
             title,
             company_profile,
@@ -50,11 +52,16 @@ class Prediction:
             benefits
         )
 
+        print("3. Cleaning text...")
         text = self.preprocessor.clean_text(text)
 
+        print("4. Vectorizing...")
         text_vector = vectorizer.transform([text])
 
+        print("5. Predicting...")
         prediction = model.predict(text_vector)
+
+        print("6. Done")
 
         return (
             "Fraudulent Job"
