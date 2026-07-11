@@ -10,8 +10,6 @@ An end-to-end NLP-based machine learning system for detecting fraudulent job pos
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-CI-2088FF?logo=githubactions)
 ![Render](https://img.shields.io/badge/Render-Deployed-46E3B7)
 
-## 🌐 Live Demo
-
 🔗 [Live Demo](https://fake-job-posting-detection-ml-system.onrender.com)
 
 ## 📑 Table of Contents
