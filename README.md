@@ -12,7 +12,7 @@ An end-to-end NLP-based machine learning system for detecting fraudulent job pos
 
 ## 🌐 Live Demo
 
-**https://fake-job-posting-detection-ml-system.onrender.com**
+🔗 [Live Demo](https://fake-job-posting-detection-ml-system.onrender.com)
 
 ## 📑 Table of Contents
 
@@ -37,6 +37,20 @@ The primary objective of this project was not only to build an accurate classifi
 
 The final model uses **TF-IDF** for text feature extraction and a **Linear SVM** classifier, achieving high performance while maintaining fast inference suitable for real-world deployment.
 
+## 📂 Dataset
+
+This project uses the **Fake Job Posting Prediction** dataset for binary classification.
+
+| Property | Value |
+|----------|-------|
+| Task | Binary Classification |
+| Total Samples | 17,880 |
+| Genuine Jobs | 17,014 |
+| Fraudulent Jobs | 866 |
+| Class Imbalance | ~95% Genuine, ~5% Fraudulent |
+
+The dataset contains structured attributes and multiple textual fields, including job title, company profile, description, requirements, and benefits. This project focuses primarily on the textual information for fraud detection.
+
 ## ✨ Features
 
 - 📄 End-to-end NLP-based fake job posting detection system
@@ -51,6 +65,8 @@ The final model uses **TF-IDF** for text feature extraction and a **Linear SVM**
 - 🐳 Docker containerization for reproducible deployment
 - 🔄 CI pipeline using GitHub Actions
 - ☁️ Cloud deployment on Render
+
+The application is containerized with Docker to ensure consistent execution across different environments. A GitHub Actions workflow automatically validates the project on every push, helping maintain code quality before deployment.
 
 ## 🏗️ System Architecture
 
@@ -207,6 +223,7 @@ The project follows a modular end-to-end machine learning pipeline, where each s
 
 > **Model:** Linear SVM  
 > **Feature Extraction:** TF-IDF Vectorizer
+The final model was selected after comparing multiple classical machine learning algorithms and tuning hyperparameters.
 
 ## 🚀 Installation
 
@@ -272,7 +289,7 @@ The application is deployed on **Render** and can be accessed here:
 
 ## 🚀 Future Improvements
 
-- - Replace TF-IDF with contextual text embeddings (e.g., Sentence Transformers) to improve semantic understanding.
+- Replace TF-IDF with contextual text embeddings (e.g., Sentence Transformers) to improve semantic understanding.
 - Introduce model monitoring and automated retraining pipelines.
 - Integrate a model registry for model versioning and lifecycle management.
 - Add REST API endpoints for easier integration with external applications.
@@ -281,4 +298,5 @@ The application is deployed on **Render** and can be accessed here:
 ## 👨‍💻 Author
 
 **Rusheenddra Basani**
+
 If you found this project interesting, feel free to ⭐ the repository.
