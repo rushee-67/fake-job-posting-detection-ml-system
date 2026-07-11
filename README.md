@@ -12,6 +12,7 @@ An end-to-end NLP-based machine learning system for detecting fraudulent job pos
 
 🔗 [Live Demo](https://fake-job-posting-detection-ml-system.onrender.com)
 
+
 ## 📑 Table of Contents
 
 - [Project Overview](#-project-overview)
@@ -27,6 +28,7 @@ An end-to-end NLP-based machine learning system for detecting fraudulent job pos
 - [Future Improvements](#-future-improvements)
 - [Author](#-author)
 
+
 ## 📌 Project Overview
 
 Fake job postings have become an increasingly common form of online fraud, making it difficult for job seekers to distinguish legitimate opportunities from deceptive ones. This project aims to automatically identify fraudulent job advertisements using Natural Language Processing (NLP) and Machine Learning techniques.
@@ -34,6 +36,7 @@ Fake job postings have become an increasingly common form of online fraud, makin
 The primary objective of this project was not only to build an accurate classification model but also to design a **production-oriented end-to-end machine learning system**. The project follows a modular architecture covering data ingestion, validation, transformation, model training, experiment tracking with MLflow, prediction pipeline, containerization with Docker, CI/CD using GitHub Actions, and cloud deployment on Render.
 
 The final model uses **TF-IDF** for text feature extraction and a **Linear SVM** classifier, achieving high performance while maintaining fast inference suitable for real-world deployment.
+
 
 ## 📂 Dataset
 
@@ -48,6 +51,7 @@ This project uses the **Fake Job Posting Prediction** dataset for binary classif
 | Class Imbalance | ~95% Genuine, ~5% Fraudulent |
 
 The dataset contains structured attributes and multiple textual fields, including job title, company profile, description, requirements, and benefits. This project focuses primarily on the textual information for fraud detection.
+
 
 ## ✨ Features
 
@@ -65,6 +69,7 @@ The dataset contains structured attributes and multiple textual fields, includin
 - ☁️ Cloud deployment on Render
 
 The application is containerized with Docker to ensure consistent execution across different environments. A GitHub Actions workflow automatically validates the project on every push, helping maintain code quality before deployment.
+
 
 ## 🏗️ System Architecture
 
@@ -150,6 +155,7 @@ The application is containerized with Docker to ensure consistent execution acro
 +----------------------+
 ```
 
+
 ## ⚙️ Tech Stack
 
 | Category | Technologies |
@@ -163,6 +169,7 @@ The application is containerized with Docker to ensure consistent execution acro
 | **Containerization** | Docker |
 | **CI/CD** | GitHub Actions |
 | **Cloud Deployment** | Render |
+
 
 ## 📂 Project Structure
 
@@ -195,6 +202,7 @@ fake-job-posting-detection/
 └── README.md
 ```
 
+
 ## 🔄 Machine Learning Pipeline
 
 The project follows a modular end-to-end machine learning pipeline, where each stage is designed as an independent component to improve maintainability, scalability, and reusability.
@@ -209,6 +217,7 @@ The project follows a modular end-to-end machine learning pipeline, where each s
 | **Prediction Pipeline** | Loads the saved model and preprocessor to perform real-time inference. |
 | **Deployment** | Serves predictions through a Flask application containerized with Docker and deployed on Render. |
 
+
 ## 📊 Model Performance
 
 | Metric | Score |
@@ -222,6 +231,7 @@ The project follows a modular end-to-end machine learning pipeline, where each s
 > **Model:** Linear SVM  
 > **Feature Extraction:** TF-IDF Vectorizer
 The final model was selected after comparing multiple classical machine learning algorithms and tuning hyperparameters.
+
 
 ## 🚀 Installation
 
@@ -259,6 +269,7 @@ python main.py
 python app.py
 ```
 
+
 ## 🐳 Run with Docker
 
 Build the Docker image:
@@ -279,17 +290,20 @@ Access the application at:
 http://localhost:5000
 ```
 
+
 ## ☁️ Live Demo
 
 The application is deployed on **Render** and can be accessed here:
 
 **🔗 https://fake-job-posting-detection-ml-system.onrender.com**
 
+
 ## 📸 Application Preview
 
 ### Home Page
 
 ![Home Page](images/home_page.png)
+
 
 ## 🚀 Future Improvements
 
@@ -298,6 +312,7 @@ The application is deployed on **Render** and can be accessed here:
 - Integrate a model registry for model versioning and lifecycle management.
 - Add REST API endpoints for easier integration with external applications.
 - Expand the dataset to improve model robustness and generalization.
+
 
 ## 👨‍💻 Author
 
